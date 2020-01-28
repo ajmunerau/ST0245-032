@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Punto
+comment1.params=coordenadaX\ coordenadaY
+comment1.target=Punto(int,\ int)
+comment2.params=
+comment2.target=Punto()
+comment3.params=
+comment3.target=int\ getX()
+comment4.params=
+comment4.target=int\ getY()
+comment5.params=
+comment5.target=double\ getRadioPolar()
+comment6.params=
+comment6.target=double\ getAnguloPolar()
+comment7.params=
+comment7.target=double\ getDistanciaEuclediana()
+comment8.params=valorX
+comment8.target=void\ setX(int)
+comment9.params=valorY
+comment9.target=void\ setY(int)
+numComments=10
