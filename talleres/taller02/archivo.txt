@@ -7,3 +7,16 @@ public class Euclides{
     }
 }
 }
+public class TestEuclides {
+    public static boolean ejercicio1(){
+        int a, b, c, d;
+        a=Euclides.gcd(12,36);
+        b=Euclides.gcd(8,12);
+        c=Euclides.gcd(72,108);
+        d=Euclides.gcd(162, 270);
+        if(a==12 && b==4 && c==36 && d==54){
+            return true;
+        }
+        return false;
+    }
+}
