@@ -1,1 +1,21 @@
 .
+import java.util.*;
+public class Hanoi {
+ public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int numberDisk;
+        System.out.println("Number of disks: ");
+        numberDisk = sc.nextInt();
+        Hanoi(numberDisk,1,2,3);  
+    }
+
+    public static void Hanoi(int numberDisk, int origen,  int auxiliar, int destino){
+        if(numberDisk==1)
+        System.out.println("Disk "+ numberDisk + " from "+ origen + " to "+ destino);
+        else{
+        Hanoi(numberDisk-1, origen, destino, auxiliar);
+        System.out.println("Disk "+ numberDisk + " from "+ origen + " to "+ destino);
+        Hanoi(numberDisk-1, auxiliar, origen, destino);
+   }
+ }
+}
