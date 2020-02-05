@@ -1,0 +1,32 @@
+public class Punto2 {
+
+    public static void combinacion(String cadena) {
+
+        combinationsAux("", cadena);
+    }
+    public static void combinationsAux(String prefix, String cadena) {
+        if (cadena.length()!=0) {
+            System.out.println(prefix+cadena.charAt(0));
+            combinationsAux(prefix+ cadena.charAt(0), cadena.substring(1));
+            combinationsAux( prefix , cadena.substring(1));
+        }
+    }
+    public static void permutacion(String str) {
+        permutacionAux("", str);
+    }
+    private static void permutacionAux(String prefix, String str) {
+        int n = str.length();
+        if (n==0) {
+            System.out.println(prefix);
+            System.out.println(AdvancedEncryptionStandard.desencriptarArchivo(prefix));
+        }
+        else {
+            for (int i = 0; i< n; i++)
+                permutacionAux( prefix+str.charAt(i), str.substring(0, i) + str.substring(i+1, n));
+        }
+    }
+    public static void main(String[]args){
+        String cadena="abcd" ;
+        permutacion(cadena);
+    }
+}
