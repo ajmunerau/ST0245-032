@@ -1,1 +1,66 @@
-Archivo adicional para permitir la creación de carpetas
+public int factorial(int n) {
+    if (n == 1) return 1;
+  return n * factorial(n-1);
+}
+
+public int fibonacci(int n) {
+  if(n<2){
+    return n;
+    }else{
+      return fibonacci(n-2)+fibonacci(n-1);
+    }
+  }
+  
+  public int sumDigits(int n) {
+if(n < 10)
+		return n;
+	return sumDigits(n/10) + n%10;
+}
+
+public int powerN(int base, int n) {
+  if(n == 1){
+    return base;
+  }else{
+    return base*powerN(base, n-1);
+  }
+  
+  public String allStar(String str) {
+  	if(str.length() < 2)
+  	return str;
+  return str.charAt(0) + "*" + allStar(str.substring(1));
+}
+
+public boolean groupSum6(int start, int[] nums, int target) {
+  if(target == 0 && start == nums.length){
+    return true;
+  }
+  if(start == nums.length){
+    return false;
+  }
+  if(nums[start] != 6 && !groupSum6(start +1, nums, target - nums[start])){
+    return groupSum6(start +1, nums, target);
+  }
+  else if(nums[start] == 6){
+    return groupSum6(start +1, nums, target -nums[start]);
+  }
+  else{
+    return true;
+  }
+  
+}
+
+public boolean groupNoAdj(int start, int[] nums, int target) {
+    if(target == 0 && start >= nums.length){
+    return true;
+  }
+  if(start >= nums.length){
+    return false;
+  }
+  if(!groupNoAdj(start +2, nums, target - nums[start])){
+    return groupNoAdj(start +1, nums, target);
+  }
+  else{
+    return true;
+  }
+}
+
