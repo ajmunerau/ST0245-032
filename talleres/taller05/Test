@@ -1,0 +1,46 @@
+public class TestTaller5{
+   public static void main(String[] args){
+        if(ejercicio3())System.out.println("EJERCICIO 3: CORRECTO!");
+        else System.out.println("EJERCICIO 3: INCORRECTO");
+    }
+ 
+   public static boolean ejercicio3(){
+        int[] temp;
+        String a,b,c,d;
+        String temps = "";
+        
+        temp = Taller5.insertionSort (new int[] {3,2,343,2,43,55,67,68,86,3,4});
+        for(int i=0;i<temp.length;i++){
+            temps += temp[i]+" ";
+        }
+        a = temps;
+        
+        temps = "";
+        temp = Taller5.insertionSort (new int[] {54,3,5,6,3,6,456,867,3,45,6,3,45,34,345});
+        for(int i=0;i<temp.length;i++){
+            temps += temp[i]+" ";
+        }
+        b = temps;
+        
+        temps = "";
+        temp = Taller5.insertionSort (new int[] {564,645,76,45,64,3,53,235,5,353,4645});
+        for(int i=0;i<temp.length;i++){
+            temps += temp[i]+" ";
+        }
+        c = temps;
+        
+        temps = "";
+        temp = Taller5.insertionSort (new int[] {876,543,3463,345,46,34,52,235,46,7,34,235,64,345,3});
+        for(int i=0;i<temp.length;i++){
+            temps += temp[i]+" ";
+        }
+        d = temps;
+        
+        if(a.equals("2 2 3 3 4 43 55 67 68 86 343 ") 
+                && b.equals("3 3 3 3 5 6 6 6 34 45 45 54 345 456 867 ")
+                && c.equals("3 5 45 53 64 76 235 353 564 645 4645 ")
+                && d.equals("3 7 34 34 46 46 52 64 235 235 345 345 543 876 3463 "))
+            return true;
+        return false;
+    }
+}
