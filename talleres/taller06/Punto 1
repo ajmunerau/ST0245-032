@@ -1,0 +1,60 @@
+ import java.util.ArrayList;
+public class Punto{
+    private static int size;
+    private static final int DEFAULT_CAPACITY =10;
+    private static char[] elements;
+    public Punto(){
+    
+        size=0;
+        elements= new  char[DEFAULT_CAPACITY];
+    }
+    public  int size(){
+        return this.size;
+    }
+    public static void addF(char e){
+        if (size == elements.length) { 
+            char[] nuevo = new char[elements.length*2]; 
+            for (int i = 0; i < elements.length; i++) {
+                nuevo[i] = elements[i];  
+            }
+            elements = nuevo;
+
+        }
+        elements[size]=e;
+        size++;
+    }
+    public static void add(char e,int index){
+        if (size == elements.length) { 
+            char[] nuevo = new char[elements.length*2]; 
+            for (int i = 0; i < elements.length; i++) {
+                nuevo[i] = elements[i];  
+            }
+            elements = nuevo;
+
+        }
+        char[] nuevo1 = new char[elements.length];
+        nuevo1=elements;
+        for (int i = index+1; i < elements.length; i++) {
+            nuevo1[i] = elements[i-1];  
+        }
+        elements = nuevo1;
+        elements[index]=e;
+        size++;
+    }
+    public static void del(int index){
+        char[] nuevo1 = new char[elements.length];
+        nuevo1=elements;
+        for (int i = index; i < elements.length-1; i++) {
+            nuevo1[i] = elements[i+1];  
+        }
+        elements = nuevo1;
+        size--;
+    }
+    public static char get(int i){
+                  if(i >= size){
+        throw new ArrayIndexOutOfBoundsException();
+      }else{
+        return elements[i];
+      } 
+    }
+}
