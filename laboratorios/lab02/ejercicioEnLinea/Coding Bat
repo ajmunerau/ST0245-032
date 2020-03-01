@@ -1,0 +1,122 @@
+public int countEvens(int[] nums) {
+  int res = 0;
+  for(int n: nums){
+    if(n % 2 == 0){
+      ++res;
+    }
+  }
+  return res;
+}
+
+public int bigDiff(int[] nums) {
+  int min = Integer.MAX_VALUE;
+  int max = Integer.MIN_VALUE;
+  for(int n: nums){
+    max = Math.max(max,n);
+    min = Math.min(min,n);
+  }
+  return max - min;
+}
+
+public int centeredAverage(int[] nums) {
+  int min = Integer.MAX_VALUE;
+  int max = Integer.MIN_VALUE;
+  int suma = 0;
+  for(int n: nums){
+    max = Math.max(max,n);
+    min = Math.min(min,n);
+    suma = suma + n;
+  }
+  return (suma-max-min)/(nums.length - 2);
+}
+
+public int sum13(int[] nums) {
+  int suma = 0;
+  boolean inmediate = false;
+  for(int n: nums){
+    if(n != 13){
+        if(!inmediate){
+          suma = suma + n;
+        }
+        else{
+          inmediate = false;
+        }
+    }
+    else{
+    inmediate = true;
+    }
+    }
+    return suma;
+  }
+  
+  public boolean has22(int[] nums) {
+  for(int i = 0; i < nums.length -1; ++i){
+    if((nums[i] == 2) && (nums[i] == nums[i+1])){
+      return true;
+    }
+  }
+  return false;
+}
+
+public int maxSpan(int[] nums) { //Tomado de Arthur Manning
+  int dist = 0;
+  
+  for(int i = 0; i<nums.length; i++){
+    int j = nums.length -1;
+    while(nums[i] != nums[j])
+    j--;
+    
+    if(dist< j-i+1)
+    dist = j-i+1;
+  }
+  return dist;
+}
+    public int countClumps(int[] nums) {
+        int a = 0;
+        int b = -1;
+        for(int i = 0; i < nums.length - 1; i++) {
+        if(nums[i] == nums[i + 1] && nums[i] != b) {
+                b = nums[i];
+                a++;
+            }
+            for(int j = 0; j < nums.length - 1; j++) {
+                if(nums[i] !=b) {
+                    b = -1;
+                }
+            }
+        }  
+        return a;
+    }
+}
+
+public boolean canBalance(int[] nums) {
+  for(int i = 1; i < nums.length; i++) {
+      int sum1 = 0, sum2 = 0;
+         for(int a = 0; a < i; a++) sum1 += nums[a];
+            for(int b = i; b < nums.length; b++) sum2 += nums[b];
+            if(sum1 == sum2) return true;
+        }
+        return false;
+    }
+    
+    public int[] seriesUp(int n) {
+        int [] a = new int [n*(n + 1)/2];
+        int b = 0;
+        for(int i = 1; i<=n; i++){
+            for(int j = 1; j<=i; j++){
+                a[b++]=j;
+            }
+        }
+        return a;
+    }
+
+    public int[] squareUp(int n) {
+        int [] a = new int [n*n];
+        int b = 0;
+        for(int i =1; i<=n; i++){
+            for(int j = n; j>=1; j--){
+                a[b++]=j;
+                if(i<j)
+                    a[b-1] = 0;
+            }
+        }
