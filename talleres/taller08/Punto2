@@ -1,0 +1,5 @@
+public class Punto2{
+    public static void ventas(Queue neveras, String nombre) {
+        System.out.println("La nevera: " + neveras.poll() + " , tienda: " + nombre);
+    }
+}
