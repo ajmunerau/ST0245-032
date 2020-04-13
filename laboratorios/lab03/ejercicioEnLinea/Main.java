@@ -1,0 +1,50 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args){
+       
+    }
+    
+    public static void teclado(String a){
+        LinkedList<Character>texto = new LinkedList<>();
+        Boolean e=false;
+        int cont = 0;
+        String b="";
+        for (int i = 0; i < a.length(); i++) {
+            b = Character.toString(a.charAt(i));
+            if(b.equalsIgnoreCase("[")){
+                e = true;  
+                cont=0;
+            }else{
+                if(b.equalsIgnoreCase("]")){
+                    e = false;
+                }
+            }
+            if(e==true){
+                texto.add(cont,a.charAt(i));
+                cont++;
+            }else{
+                if(e==false){
+                    texto.offer(a.charAt(i));
+                }
+            }
+        }
+        int y=0;
+        while(y< a.length()){
+            for (int i = 0; i < texto.size(); i++) {
+            String w ="";
+            w = Character.toString(texto.get(i));
+            if(w.equalsIgnoreCase("[") || w.equalsIgnoreCase("]")){
+                texto.remove(i);
+            }
+            }
+            y++;
+        }
+        
+        
+        String cadena = "";
+        for (int i = 0; i < texto.size(); i++) {
+            cadena += texto.get(i);
+        }
+        System.out.println(cadena);
+    }
