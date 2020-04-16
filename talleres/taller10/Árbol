@@ -1,0 +1,92 @@
+
+public class BinaryTree {
+
+    public void insertar(int n) {
+        insertarAux(root, n);
+    }
+
+    private void insertarAux(Node node, int n) {
+        
+            if (node.data == n){
+                return;
+            }else if (n > node.data) {
+                if (node.right == null) {
+                    node.right = new Node(n);
+                }else {
+                    insertarAux(node.right, n);
+                }
+            }else {
+                if (node.left == null) {
+                    node.left = new Node(n);
+                }else {
+                    insertarAux(node.left, n);
+                }
+            }
+        }
+
+    public boolean buscar(int n) {
+        return buscarAux(root, n);
+    }
+
+    private boolean buscarAux(Node node, int n) {
+        if(node==null)return false;
+        if (node.data == n) {
+            return true;
+        }
+        if (node == null) {
+            return false;
+        }
+        if (n > node.data) {
+            return buscarAux(node.right, n);
+        }
+        return buscarAux(node.left, n);
+    }
+
+    public void borrar(int n) {
+        borrarAux(root, n);
+    }
+
+    private void borrarAux(Node node, int n) {
+        //..
+
+    }
+
+    private void recursivePrintAUX(Node node)
+    {
+        if (node != null)
+        {
+            recursivePrintAUX(node.left);
+            recursivePrintAUX(node.right);
+            System.out.println(node.data);
+        }
+
+    }
+
+    public void recursivePrint()
+    {
+        recursivePrintAUX(root);
+    }
+
+    public static void main(String[]args){
+        BinaryTree arbol = new BinaryTree();
+        /*arbol.root = new Node(3);
+        arbol.root.left= new Node(4);
+        arbol.root.right= new Node(5);
+        arbol.root.left.left= new Node(6);
+        arbol.root.left.right= new Node(7);
+        arbol.root.right.left= new Node(8);
+        arbol.root.right.right= new Node(9);
+         */
+        arbol.root=new Node(0);
+        arbol.insertar(1);
+        arbol.insertar(2);
+        arbol.insertar(4);
+        arbol.insertar(5);
+        arbol.insertar(6);
+        arbol.recursivePrint();
+        System.out.println(arbol.buscar(3));
+        System.out.println(arbol.buscar(2));
+
+    }
+
+}
