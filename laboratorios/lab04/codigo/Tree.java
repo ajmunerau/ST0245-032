@@ -5,7 +5,7 @@ public class Tree {
         root.addFile(n);
     }
     public static void insertion(String directory, String name, double size) {
-        Node2 node = insertionAux(root, directory);
+        Nodo node = insertionAux(root, directory);
         Nodo n = new Nodo(name, size, node);
         node.addFile(n);
     }
@@ -36,7 +36,7 @@ public class Tree {
             }
         }
     }
-    public static void searchAux(String [] array, Node2 node, int p, double size) {
+    public static void searchAux(String [] array, Nodo node, int p, double size) {
         if(node.getName().equals(array[p])) {
             for(int i = 0; i < node.getFilesSize();i++) {
                 if (node.getFile(i).getSize() < size) System.out.println(node.getFile(i).getName());
