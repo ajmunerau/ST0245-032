@@ -1,5 +1,4 @@
-  
-import java.util.ArrayList;
+ import java.util.ArrayList;
 public abstract class Graph {
 	protected int size;
 	public Graph(int vertices) {
